@@ -125,6 +125,10 @@ pip install -r requirements.txt
 python -m src.main
 ```
 
+### Sample Output (Default pop/happy Profile)
+
+![Default profile terminal output](assets/screenshots/output-default-profile.png)
+
 ### Running Tests
 
 Run the starter tests with:
@@ -138,6 +142,26 @@ You can add more tests in `tests/test_recommender.py`.
 ---
 
 ## Experiments You Tried
+
+### Stress Test: 6 Diverse User Profiles
+
+**1. High-Energy Pop**
+![High-Energy Pop profile output](assets/screenshots/output-stress-01-high-energy-pop.png)
+
+**2. Chill Lofi**
+![Chill Lofi profile output](assets/screenshots/output-stress-02-chill-lofi.png)
+
+**3. Deep Intense Rock**
+![Deep Intense Rock profile output](assets/screenshots/output-stress-03-deep-intense-rock.png)
+
+**4. Conflicting: Sad + High Energy**
+![Conflicting Sad High Energy profile output](assets/screenshots/output-stress-04-conflicting-sad-high-energy.png)
+
+**5. Ghost Genre (no catalog match)**
+![Ghost Genre profile output](assets/screenshots/output-stress-05-ghost-genre.png)
+
+**6. Extreme Acoustic Seeker**
+![Extreme Acoustic Seeker profile output](assets/screenshots/output-stress-06-extreme-acoustic-seeker.png)
 
 Use this section to document the experiments you ran. For example:
 

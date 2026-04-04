@@ -3,7 +3,8 @@
     "allow": [
       "WebSearch",
       "WebFetch(domain:research.atspotify.com)",
-      "WebFetch(domain:www.music-tomorrow.com)"
+      "WebFetch(domain:www.music-tomorrow.com)",
+      "Bash(python3 src/main.py)"
     ]
   }
 }
