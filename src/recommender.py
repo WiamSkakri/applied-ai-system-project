@@ -59,15 +59,55 @@ def score_song(user_prefs: Dict, song: Dict) -> Tuple[float, List[str]]:
     Scores a single song against user preferences.
     Required by recommend_songs() and src/main.py
     """
-    # TODO: Implement scoring logic using your Algorithm Recipe from Phase 2.
-    # Expected return format: (score, reasons)
-    return []
+    score = 0.0
+    reasons = []
+
+    # +3.0 mood match (primary signal — the experience the user wants)
+    if song.get("mood") == user_prefs.get("mood"):
+        score += 3.0
+        reasons.append(f"mood matches '{song['mood']}'")
+
+    # +2.0 genre match (secondary signal — stylistic preference)
+    if song.get("genre") == user_prefs.get("genre"):
+        score += 2.0
+        reasons.append(f"genre matches '{song['genre']}'")
+
+    # +0.0–2.0 energy proximity (closer to target = higher score)
+    target_energy = user_prefs.get("target_energy", user_prefs.get("energy", 0.5))
+    energy_proximity = 1.0 - abs(song.get("energy", 0.5) - target_energy)
+    score += energy_proximity * 2.0
+    reasons.append(f"energy fit: {energy_proximity:.2f}")
+
+    # +0.0–1.5 acousticness fit
+    acousticness = song.get("acousticness", 0.5)
+    if user_prefs.get("likes_acoustic", False):
+        acousticness_score = acousticness
+    else:
+        acousticness_score = 1.0 - acousticness
+    score += acousticness_score * 1.5
+    reasons.append(f"acousticness fit: {acousticness_score:.2f}")
+
+    # +0.0–1.0 valence fit (confirms emotional tone numerically)
+    valence = song.get("valence", 0.5)
+    positive_moods = {"happy", "energetic", "romantic", "confident"}
+    if user_prefs.get("mood") in positive_moods:
+        valence_score = valence
+    else:
+        valence_score = 1.0 - valence
+    score += valence_score * 1.0
+    reasons.append(f"valence fit: {valence_score:.2f}")
+
+    return score, reasons
 
 def recommend_songs(user_prefs: Dict, songs: List[Dict], k: int = 5) -> List[Tuple[Dict, float, str]]:
     """
     Functional implementation of the recommendation logic.
     Required by src/main.py
     """
-    # TODO: Implement scoring and ranking logic
-    # Expected return format: (song_dict, score, explanation)
-    return []
+    scored = []
+    for song in songs:
+        score, reasons = score_song(user_prefs, song)
+        scored.append((song, score, "; ".join(reasons)))
+
+    scored.sort(key=lambda x: x[1], reverse=True)
+    return scored[:k]

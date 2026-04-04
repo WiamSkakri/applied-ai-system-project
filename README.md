@@ -11,23 +11,94 @@ Your goal is to:
 - Evaluate what your system gets right and wrong
 - Reflect on how this mirrors real world AI recommenders
 
-Replace this paragraph with your own summary of what your version does.
+This simulation builds a content-based music recommender that scores songs against a user's declared taste profile. It prioritizes emotional fit (mood and energy) over stylistic labels (genre), reflecting the insight that a user wanting something "chill" is better served by a calm ambient track than a chill-labeled song with high energy. The system scores each song individually, ranks all scores, and returns the top matches with plain-language explanations of why each song was recommended.
 
 ---
 
 ## How The System Works
 
-Explain your design in plain language.
+Real-world recommenders like Spotify and YouTube use two main strategies: collaborative filtering (learning from what millions of other users listen to) and content-based filtering (matching songs to a user based on the song's own attributes like tempo, energy, and mood). This simulation focuses on content-based filtering — it scores every song in the catalog against a user's declared preferences and surfaces the closest matches. Rather than learning from other users, it prioritizes the emotional and sonic qualities that describe what the user wants right now: their preferred mood, energy level, and whether they lean acoustic or electronic.
 
-Some prompts to answer:
+### `Song` features used in scoring
 
-- What features does each `Song` use in your system
-  - For example: genre, mood, energy, tempo
-- What information does your `UserProfile` store
-- How does your `Recommender` compute a score for each song
-- How do you choose which songs to recommend
+| Feature | Type | Role in scoring |
+|---|---|---|
+| `mood` | `str` | Primary match — worth the most points |
+| `energy` | `float` (0.0–1.0) | Proximity to user's target energy |
+| `genre` | `str` | Secondary categorical match |
+| `acousticness` | `float` (0.0–1.0) | Fit to user's acoustic preference |
+| `valence` | `float` (0.0–1.0) | Confirms emotional tone numerically |
+| `tempo_bpm` | `float` | Supporting signal (normalized) |
+| `danceability` | `float` (0.0–1.0) | Minor weight, correlated with energy |
 
-You can include a simple diagram or bullet list if helpful.
+### `UserProfile` fields
+
+| Field | Type | What it captures |
+|---|---|---|
+| `favorite_genre` | `str` | Preferred stylistic category |
+| `favorite_mood` | `str` | Emotional state the user wants |
+| `target_energy` | `float` | How intense vs. calm the user wants |
+| `likes_acoustic` | `bool` | Acoustic vs. produced/electronic preference |
+
+### Algorithm Recipe (Finalized)
+
+Each song receives a numeric score computed by `score_song()`:
+
+| Rule | Max Points | Formula |
+|---|---|---|
+| Mood match | **+3.0** | Exact string match on `mood` |
+| Genre match | **+2.0** | Exact string match on `genre` |
+| Energy proximity | **+2.0** | `(1 - abs(song.energy - target_energy)) × 2` |
+| Acousticness fit | **+1.5** | `song.acousticness × 1.5` if acoustic, else `(1 - song.acousticness) × 1.5` |
+| Valence fit | **+1.0** | `song.valence` if positive mood, else `(1 - song.valence)` |
+| **Max total** | **9.5** | |
+
+Mood is weighted highest (3.0) because it represents the emotional experience the user wants right now. Genre is secondary (2.0) because style preference is more flexible — a user who wants something "chill" is better served by a calm jazz track than an intense pop song, even if pop is their usual genre.
+
+All scored songs are sorted descending by score (`recommend_songs()`). The top `k` are returned with a plain-language explanation of which features contributed.
+
+### Data Flow
+
+```mermaid
+flowchart TD
+    A([🎧 User Taste Profile\ngenre · mood · target_energy\nlikes_acoustic]) --> B
+
+    B[Load songs.csv\ninto list of dicts] --> C
+
+    C{More songs\nto score?} -->|Yes| D
+    C -->|No| H
+
+    D[Take next song\nfrom catalog] --> E
+
+    E[score_song\nuser_prefs · song] --> F
+
+    F["`**Apply scoring rules:**
+    +3.0 if mood matches
+    +2.0 if genre matches
+    +0–2.0 energy proximity
+    +0–1.5 acousticness fit
+    +0–1.0 valence fit`"] --> G
+
+    G[Append\nsong · score · reasons\nto scored list] --> C
+
+    H[Sort scored list\nby score descending] --> I
+
+    I[Slice top K results] --> J
+
+    J([🎵 Top K Recommendations\nwith scores + explanations])
+
+    style A fill:#4f46e5,color:#fff
+    style J fill:#059669,color:#fff
+    style F fill:#fef3c7
+    style E fill:#dbeafe
+```
+
+### Potential Biases
+
+- **Mood-miss penalty is silent:** If no song in the catalog matches the user's mood, the mood rule contributes 0 pts to every song equally — the system quietly falls back to energy and genre without telling the user there were no mood matches.
+- **Rare genres are penalized by default:** With 18 songs across 15 genres, most genres appear only once. A user whose genre doesn't appear in the catalog loses the 2.0 genre bonus on every song, making the genre field effectively useless for niche tastes.
+- **Positive-mood bias in valence:** The valence rule maps "happy/energetic/romantic/confident" to high valence and everything else to low valence. Moods like "focused" or "nostalgic" don't clearly map to either end of the valence axis, so those users may be scored slightly unfairly.
+- **No diversity enforcement:** The ranking always returns the top K closest matches, which may all be from the same genre cluster (e.g., all lofi for a chill user), reducing discovery of adjacent styles the user might enjoy.
 
 ---
 

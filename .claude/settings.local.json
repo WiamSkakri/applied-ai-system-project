@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch(domain:research.atspotify.com)",
+      "WebFetch(domain:www.music-tomorrow.com)"
+    ]
+  }
+}

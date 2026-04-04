@@ -9,3 +9,11 @@ id,title,artist,genre,mood,energy,tempo_bpm,valence,danceability,acousticness
 8,Night Drive Loop,Neon Echo,synthwave,moody,0.75,110,0.49,0.73,0.22
 9,Focus Flow,LoRoom,lofi,focused,0.40,80,0.59,0.60,0.78
 10,Rooftop Lights,Indigo Parade,indie pop,happy,0.76,124,0.81,0.82,0.35
+11,Broken Clocks,Velvet Minor,r&b,sad,0.45,88,0.22,0.55,0.48
+12,Red Dust Road,Prairie Echo,country,nostalgic,0.54,96,0.68,0.61,0.74
+13,Bass Drop Galaxy,Frekwency,edm,energetic,0.95,140,0.72,0.94,0.04
+14,Rainy Seoul,Park Hyeon,k-pop,romantic,0.63,108,0.78,0.74,0.29
+15,Concrete Jungle,MC Drift,hip-hop,confident,0.80,98,0.55,0.83,0.11
+16,Requiem in Blue,Aria Voss,classical,melancholic,0.21,52,0.18,0.22,0.97
+17,Backyard Fire,The Hollow Bones,folk,nostalgic,0.33,74,0.73,0.44,0.91
+18,Voltage Surge,Chainbreak,metal,angry,0.97,168,0.31,0.58,0.06
