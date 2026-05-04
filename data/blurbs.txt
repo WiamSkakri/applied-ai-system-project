@@ -1,0 +1,100 @@
+Tujhe Kitna Chahne Lage by Arijit Singh — a melancholic pop song. It is moderately energetic (energy 0.40), downbeat and somber (valence 0.30), slow at 71.0 BPM, mostly acoustic, moderately danceable.
+Tere Bina by A.R. Rahman — a happy pop song. It is very energetic (energy 0.70), upbeat and positive (valence 0.87), fast at 144.0 BPM, electric/produced, highly danceable.
+Perfect by Ed Sheeran — a sad pop song. It is moderately energetic (energy 0.45), downbeat and somber (valence 0.17), mid-tempo at 95.0 BPM, electric/produced, moderately danceable.
+Adheeraa by A.R. Rahman — a energetic pop song. It is very energetic (energy 0.83), neutral (valence 0.56), mid-tempo at 111.0 BPM, electric/produced, highly danceable.
+Baarish Lete Aana by Darshan Raval — a melancholic pop song. It is calm (energy 0.35), downbeat and somber (valence 0.32), slow at 67.0 BPM, mostly acoustic, moderately danceable.
+Whatever It Takes by Imagine Dragons — a moody rock song. It is moderately energetic (energy 0.66), neutral (valence 0.56), fast at 135.0 BPM, electric/produced, moderately danceable.
+Courtesy Call by Thousand Foot Krutch — a moody rock song. It is moderately energetic (energy 0.64), neutral (valence 0.45), fast at 164.0 BPM, electric/produced, moderately danceable.
+The Final Countdown by Europe — a intense rock song. It is very energetic (energy 0.84), downbeat and somber (valence 0.19), mid-tempo at 118.0 BPM, electric/produced, moderately danceable.
+Stressed Out by Twenty One Pilots — a happy rock song. It is moderately energetic (energy 0.64), neutral (valence 0.65), fast at 170.0 BPM, electric/produced, highly danceable.
+Thunderstruck by AC/DC — a intense rock song. It is very energetic (energy 0.89), downbeat and somber (valence 0.26), fast at 134.0 BPM, electric/produced, moderately danceable.
+Evening Silence by Three Four Trio — a melancholic jazz song. It is calm (energy 0.14), downbeat and somber (valence 0.11), mid-tempo at 89.0 BPM, mostly acoustic, moderately danceable.
+My Funny Valentine by Chet Baker — a melancholic jazz song. It is calm (energy 0.01), downbeat and somber (valence 0.28), fast at 133.0 BPM, mostly acoustic, moderately danceable.
+Öyle Bir Rüya by Hüsnü Arkan — a sad jazz song. It is moderately energetic (energy 0.47), downbeat and somber (valence 0.37), mid-tempo at 97.0 BPM, electric/produced, not very danceable.
+Comics by Caravan Palace — a energetic jazz song. It is very energetic (energy 0.85), neutral (valence 0.56), mid-tempo at 90.0 BPM, electric/produced, moderately danceable.
+Deirdres samba by Cornelis Vreeswijk — a chill jazz song. It is calm (energy 0.30), upbeat and positive (valence 0.85), mid-tempo at 100.0 BPM, mostly acoustic, moderately danceable.
+Mozart: Piano Concerto No. 20 in D Minor, K. 466: III. Allegro assai by Wolfgang Amadeus Mozart — a melancholic classical song. It is calm (energy 0.16), downbeat and somber (valence 0.23), slow at 72.0 BPM, mostly acoustic, not very danceable.
+Kaakum Kadavul by Sirkazhi Govindarajan — a happy classical song. It is very energetic (energy 0.71), upbeat and positive (valence 0.80), mid-tempo at 100.0 BPM, mixed acoustic and electric, moderately danceable.
+Indrayani Kathi by Bhimsen Joshi — a relaxed classical song. It is moderately energetic (energy 0.42), upbeat and positive (valence 0.72), slow at 77.0 BPM, mostly acoustic, moderately danceable.
+Aan Milo Sajna by Ajoy Chakrabarty — a energetic classical song. It is very energetic (energy 0.84), neutral (valence 0.50), slow at 68.0 BPM, mostly acoustic, not very danceable.
+Maruthamalai Maamaniye by Madurai Somasundaram — a relaxed classical song. It is moderately energetic (energy 0.49), neutral (valence 0.61), mid-tempo at 96.0 BPM, mostly acoustic, not very danceable.
+Jaadugar by Paradox — a sad hip-hop song. It is moderately energetic (energy 0.57), downbeat and somber (valence 0.19), mid-tempo at 95.0 BPM, mostly acoustic, moderately danceable.
+Usuraiya Tholaichaen by Stephen Zechariah — a sad hip-hop song. It is moderately energetic (energy 0.58), downbeat and somber (valence 0.37), mid-tempo at 100.0 BPM, mixed acoustic and electric, moderately danceable.
+Notorious by Wazir Patar — a moody hip-hop song. It is moderately energetic (energy 0.61), neutral (valence 0.53), slow at 84.0 BPM, electric/produced, highly danceable.
+Po Ve Po - The Pain of Love by Anirudh Ravichander — a sad hip-hop song. It is moderately energetic (energy 0.62), downbeat and somber (valence 0.35), mid-tempo at 90.0 BPM, mixed acoustic and electric, moderately danceable.
+Ykwim by Karan Aujla — a relaxed hip-hop song. It is moderately energetic (energy 0.57), neutral (valence 0.66), mid-tempo at 105.0 BPM, electric/produced, highly danceable.
+Me Canse de Amarte by Edwin Luna y La Trakalosa de Monterrey — a moody r-n-b song. It is moderately energetic (energy 0.56), neutral (valence 0.51), fast at 130.0 BPM, electric/produced, moderately danceable.
+Deep End Freestyle by Sleepy Hallow — a relaxed r-n-b song. It is moderately energetic (energy 0.48), upbeat and positive (valence 0.78), fast at 134.0 BPM, mostly acoustic, highly danceable.
+Toda Forma De Poder by Engenheiros Do Hawaii — a energetic r-n-b song. It is very energetic (energy 0.95), neutral (valence 0.59), fast at 203.0 BPM, electric/produced, not very danceable.
+Build Me Up Buttercup by The Foundations — a happy r-n-b song. It is moderately energetic (energy 0.66), upbeat and positive (valence 0.88), fast at 134.0 BPM, electric/produced, moderately danceable.
+El Terrón by Sergio Vega "El Shaka" — a happy r-n-b song. It is very energetic (energy 0.76), upbeat and positive (valence 0.97), mid-tempo at 96.0 BPM, mixed acoustic and electric, highly danceable.
+Bhayanak Atma by Nucleya — a happy edm song. It is very energetic (energy 0.95), neutral (valence 0.61), fast at 194.0 BPM, electric/produced, moderately danceable.
+He's a Pirate - Hans Zimmer vs Dimitri Vegas & Like Mike / Bonus Track by Dimitri Vegas & Like Mike — a intense edm song. It is very energetic (energy 0.92), downbeat and somber (valence 0.34), mid-tempo at 112.0 BPM, electric/produced, moderately danceable.
+One Thing Right by Marshmello — a moody edm song. It is moderately energetic (energy 0.62), neutral (valence 0.44), mid-tempo at 88.0 BPM, electric/produced, moderately danceable.
+Words (feat. Zara Larsson) by Alesso — a moody edm song. It is moderately energetic (energy 0.59), neutral (valence 0.44), mid-tempo at 124.0 BPM, electric/produced, highly danceable.
+Don’t Go (with Justin Bieber & Don Toliver) by Skrillex — a sad edm song. It is moderately energetic (energy 0.69), downbeat and somber (valence 0.36), slow at 75.0 BPM, electric/produced, moderately danceable.
+Blow My Smoke by Upchurch — a happy country song. It is very energetic (energy 0.85), neutral (valence 0.64), fast at 150.0 BPM, electric/produced, moderately danceable.
+På vei by Rotlaus — a intense country song. It is very energetic (energy 0.79), downbeat and somber (valence 0.35), mid-tempo at 88.0 BPM, electric/produced, moderately danceable.
+I Hate Love Songs by Kelsea Ballerini — a moody country song. It is moderately energetic (energy 0.45), neutral (valence 0.40), fast at 180.0 BPM, electric/produced, not very danceable.
+Hurt by Johnny Cash — a melancholic country song. It is calm (energy 0.39), downbeat and somber (valence 0.16), mid-tempo at 90.0 BPM, mixed acoustic and electric, moderately danceable.
+Hjortejakt by Vassendgutane — a happy country song. It is very energetic (energy 0.83), upbeat and positive (valence 0.77), mid-tempo at 108.0 BPM, electric/produced, moderately danceable.
+Ya Rabba by Kailash Kher — a moody folk song. It is moderately energetic (energy 0.41), neutral (valence 0.59), fast at 144.0 BPM, electric/produced, moderately danceable.
+Necesito De Ti by Grupo Azteka — a happy folk song. It is very energetic (energy 0.70), upbeat and positive (valence 0.86), fast at 153.0 BPM, electric/produced, moderately danceable.
+Ontario by Novo Amor — a melancholic folk song. It is calm (energy 0.22), downbeat and somber (valence 0.17), mid-tempo at 90.0 BPM, mostly acoustic, moderately danceable.
+As It Was by Vancouver Sleep Clinic — a melancholic folk song. It is calm (energy 0.31), downbeat and somber (valence 0.14), fast at 144.0 BPM, mostly acoustic, moderately danceable.
+The Sound of Silence - Acoustic Version by Simon & Garfunkel — a melancholic folk song. It is calm (energy 0.22), downbeat and somber (valence 0.33), mid-tempo at 107.0 BPM, mostly acoustic, moderately danceable.
+Chico Granada by Carajo — a intense metal song. It is very energetic (energy 0.96), downbeat and somber (valence 0.39), fast at 160.0 BPM, electric/produced, moderately danceable.
+Crawling In The Dark by Hoobastank — a happy metal song. It is very energetic (energy 0.93), neutral (valence 0.65), mid-tempo at 94.0 BPM, electric/produced, moderately danceable.
+The Rumbling (TV Size) by SiM — a happy metal song. It is very energetic (energy 0.88), neutral (valence 0.65), fast at 145.0 BPM, electric/produced, moderately danceable.
+More Than Words by Extreme — a melancholic metal song. It is calm (energy 0.13), downbeat and somber (valence 0.26), fast at 183.0 BPM, mixed acoustic and electric, moderately danceable.
+Can't Stop Lovin' You by Van Halen — a energetic metal song. It is very energetic (energy 0.90), neutral (valence 0.54), mid-tempo at 118.0 BPM, electric/produced, moderately danceable.
+Makeba by Jain — a moody indie song. It is moderately energetic (energy 0.66), neutral (valence 0.42), mid-tempo at 116.0 BPM, electric/produced, highly danceable.
+Naganya Maya by Sajjan Raj Vaidya — a melancholic indie song. It is calm (energy 0.26), downbeat and somber (valence 0.20), fast at 171.0 BPM, mostly acoustic, not very danceable.
+Chinta by Tribal Rain — a chill indie song. It is calm (energy 0.30), upbeat and positive (valence 0.72), mid-tempo at 98.0 BPM, mostly acoustic, highly danceable.
+Falling In Love by Cigarettes After Sex — a melancholic indie song. It is calm (energy 0.27), downbeat and somber (valence 0.37), fast at 141.0 BPM, mostly acoustic, moderately danceable.
+Normal No More by TYSM — a sad indie song. It is moderately energetic (energy 0.53), downbeat and somber (valence 0.18), mid-tempo at 95.0 BPM, mixed acoustic and electric, highly danceable.
+The Letter (Guilty) by Sir Charles Jones — a relaxed blues song. It is moderately energetic (energy 0.41), neutral (valence 0.61), mid-tempo at 100.0 BPM, mixed acoustic and electric, highly danceable.
+I Say a Little Prayer by Aretha Franklin — a focused blues song. It is calm (energy 0.35), neutral (valence 0.50), fast at 133.0 BPM, mixed acoustic and electric, moderately danceable.
+In the Summertime by Mungo Jerry — a relaxed blues song. It is moderately energetic (energy 0.45), upbeat and positive (valence 0.97), slow at 83.0 BPM, mostly acoustic, highly danceable.
+Bad by Royal Deluxe — a moody blues song. It is moderately energetic (energy 0.62), neutral (valence 0.56), slow at 83.0 BPM, electric/produced, moderately danceable.
+Move Something by Lacee — a happy blues song. It is moderately energetic (energy 0.63), upbeat and positive (valence 0.80), fast at 190.0 BPM, electric/produced, moderately danceable.
+Skin by Rag'n'Bone Man — a intense soul song. It is very energetic (energy 0.74), downbeat and somber (valence 0.35), fast at 171.0 BPM, electric/produced, moderately danceable.
+Never Easy by Manila Killa — a intense soul song. It is very energetic (energy 0.94), downbeat and somber (valence 0.06), mid-tempo at 123.0 BPM, electric/produced, moderately danceable.
+Man in the Mirror - 2012 Remaster by Michael Jackson — a intense soul song. It is very energetic (energy 0.81), downbeat and somber (valence 0.27), mid-tempo at 100.0 BPM, mixed acoustic and electric, highly danceable.
+You Know I'm No Good by Amy Winehouse — a relaxed soul song. It is moderately energetic (energy 0.50), upbeat and positive (valence 0.80), mid-tempo at 103.0 BPM, electric/produced, moderately danceable.
+Rolling in the Deep by Adele — a energetic soul song. It is very energetic (energy 0.77), neutral (valence 0.51), mid-tempo at 105.0 BPM, electric/produced, highly danceable.
+Sai Pra Lá 2 by Mc Kadu — a relaxed funk song. It is moderately energetic (energy 0.44), neutral (valence 0.66), mid-tempo at 113.0 BPM, mixed acoustic and electric, highly danceable.
+Hit 'Em Up - Single Version by 2Pac — a energetic funk song. It is very energetic (energy 0.84), neutral (valence 0.59), mid-tempo at 95.0 BPM, electric/produced, highly danceable.
+Se Eu Te Botar Faz Barulho? by Mc Gw — a happy funk song. It is very energetic (energy 0.80), upbeat and positive (valence 0.73), fast at 132.0 BPM, electric/produced, highly danceable.
+Favela Sorrir by Mc Kelvinho — a moody funk song. It is moderately energetic (energy 0.52), neutral (valence 0.45), fast at 180.0 BPM, mixed acoustic and electric, moderately danceable.
+By the Way by Red Hot Chili Peppers — a intense funk song. It is very energetic (energy 0.97), downbeat and somber (valence 0.20), mid-tempo at 122.0 BPM, electric/produced, moderately danceable.
+Me Muero by Nigga — a happy reggae song. It is very energetic (energy 0.76), upbeat and positive (valence 0.93), slow at 80.0 BPM, electric/produced, moderately danceable.
+Caile by Luar La L — a energetic reggae song. It is very energetic (energy 0.76), neutral (valence 0.46), mid-tempo at 122.0 BPM, electric/produced, highly danceable.
+Red Red Wine by UB40 — a relaxed reggae song. It is moderately energetic (energy 0.47), upbeat and positive (valence 0.84), mid-tempo at 89.0 BPM, electric/produced, highly danceable.
+DÁKITI by Bad Bunny — a sad reggae song. It is moderately energetic (energy 0.57), downbeat and somber (valence 0.14), mid-tempo at 110.0 BPM, mixed acoustic and electric, highly danceable.
+It Wasn't Me by Shaggy — a happy reggae song. It is moderately energetic (energy 0.61), neutral (valence 0.65), mid-tempo at 95.0 BPM, electric/produced, highly danceable.
+Surfista Calhorda by Os Replicantes — a happy punk song. It is very energetic (energy 0.78), upbeat and positive (valence 0.75), fast at 205.0 BPM, electric/produced, not very danceable.
+Cartonero by Attaque 77 — a happy punk song. It is very energetic (energy 0.83), upbeat and positive (valence 0.81), fast at 170.0 BPM, electric/produced, moderately danceable.
+When I Come Around by Green Day — a happy punk song. It is very energetic (energy 0.91), upbeat and positive (valence 0.81), mid-tempo at 98.0 BPM, electric/produced, moderately danceable.
+Holiday by Green Day — a happy punk song. It is very energetic (energy 0.88), upbeat and positive (valence 0.74), fast at 147.0 BPM, electric/produced, moderately danceable.
+ハッピーライフ by 175R — a intense punk song. It is very energetic (energy 0.98), downbeat and somber (valence 0.36), fast at 133.0 BPM, electric/produced, moderately danceable.
+Nocturnal by Joep Beving — a melancholic ambient song. It is calm (energy 0.02), downbeat and somber (valence 0.10), slow at 57.0 BPM, mostly acoustic, not very danceable.
+Pure by Cigarettes After Sex — a melancholic ambient song. It is calm (energy 0.21), downbeat and somber (valence 0.04), fast at 134.0 BPM, mixed acoustic and electric, moderately danceable.
+Ala by Joep Beving — a melancholic ambient song. It is calm (energy 0.12), downbeat and somber (valence 0.37), slow at 80.0 BPM, mostly acoustic, not very danceable.
+Borderland Sorrows by Slow Meadow — a melancholic ambient song. It is calm (energy 0.11), downbeat and somber (valence 0.08), slow at 82.0 BPM, mostly acoustic, not very danceable.
+Sweet by Cigarettes After Sex — a sad ambient song. It is moderately energetic (energy 0.51), downbeat and somber (valence 0.12), mid-tempo at 97.0 BPM, electric/produced, moderately danceable.
+Family by The Chainsmokers — a sad house song. It is moderately energetic (energy 0.61), downbeat and somber (valence 0.37), mid-tempo at 118.0 BPM, mixed acoustic and electric, moderately danceable.
+Blah Blah Blah by Armin van Buuren — a intense house song. It is very energetic (energy 0.96), downbeat and somber (valence 0.18), fast at 138.0 BPM, electric/produced, moderately danceable.
+Get Low by Dillon Francis — a happy house song. It is very energetic (energy 0.93), upbeat and positive (valence 0.73), mid-tempo at 101.0 BPM, electric/produced, moderately danceable.
+Personal by HRVY — a relaxed house song. It is moderately energetic (energy 0.54), upbeat and positive (valence 0.88), fast at 139.0 BPM, electric/produced, highly danceable.
+Fake A Smile by Alan Walker — a sad house song. It is moderately energetic (energy 0.55), downbeat and somber (valence 0.25), fast at 150.0 BPM, electric/produced, moderately danceable.
+Rhythm Is a Dancer (12'' Version) by SNAP! — a happy techno song. It is very energetic (energy 0.87), upbeat and positive (valence 0.85), mid-tempo at 124.0 BPM, electric/produced, highly danceable.
+Too Little Too Late - Little Late Edit by Joris Voorn — a intense techno song. It is very energetic (energy 0.74), downbeat and somber (valence 0.17), mid-tempo at 128.0 BPM, electric/produced, moderately danceable.
+Exoplanet by Third Person — a intense techno song. It is very energetic (energy 0.89), downbeat and somber (valence 0.04), mid-tempo at 124.0 BPM, electric/produced, highly danceable.
+Dragon of Eden - Original Mix by Kevin de Vries — a sad techno song. It is moderately energetic (energy 0.68), downbeat and somber (valence 0.03), mid-tempo at 125.0 BPM, electric/produced, highly danceable.
+Red Light Green Light - For Club Play Only, Pt. 6 by Duke Dumont — a happy techno song. It is very energetic (energy 0.82), upbeat and positive (valence 0.95), mid-tempo at 124.0 BPM, electric/produced, highly danceable.
+Brighter Than Sunshine by Aqualung — a sad acoustic song. It is moderately energetic (energy 0.49), neutral (valence 0.40), slow at 73.0 BPM, electric/produced, moderately danceable.
+Between the Stars by Canyon City — a melancholic acoustic song. It is calm (energy 0.29), downbeat and somber (valence 0.08), mid-tempo at 95.0 BPM, mostly acoustic, moderately danceable.
+See You Again by Boyce Avenue — a sad acoustic song. It is moderately energetic (energy 0.41), downbeat and somber (valence 0.28), fast at 152.0 BPM, mixed acoustic and electric, moderately danceable.
+Can You Feel the Love Tonight by Boyce Avenue — a melancholic acoustic song. It is calm (energy 0.20), downbeat and somber (valence 0.22), mid-tempo at 119.0 BPM, mostly acoustic, moderately danceable.
+July Bones by Richard Walters — a melancholic acoustic song. It is calm (energy 0.27), downbeat and somber (valence 0.15), mid-tempo at 100.0 BPM, mostly acoustic, moderately danceable.

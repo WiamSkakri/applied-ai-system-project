@@ -1,19 +1,101 @@
 id,title,artist,genre,mood,energy,tempo_bpm,valence,danceability,acousticness
-1,Sunrise City,Neon Echo,pop,happy,0.82,118,0.84,0.79,0.18
-2,Midnight Coding,LoRoom,lofi,chill,0.42,78,0.56,0.62,0.71
-3,Storm Runner,Voltline,rock,intense,0.91,152,0.48,0.66,0.10
-4,Library Rain,Paper Lanterns,lofi,chill,0.35,72,0.60,0.58,0.86
-5,Gym Hero,Max Pulse,pop,intense,0.93,132,0.77,0.88,0.05
-6,Spacewalk Thoughts,Orbit Bloom,ambient,chill,0.28,60,0.65,0.41,0.92
-7,Coffee Shop Stories,Slow Stereo,jazz,relaxed,0.37,90,0.71,0.54,0.89
-8,Night Drive Loop,Neon Echo,synthwave,moody,0.75,110,0.49,0.73,0.22
-9,Focus Flow,LoRoom,lofi,focused,0.40,80,0.59,0.60,0.78
-10,Rooftop Lights,Indigo Parade,indie pop,happy,0.76,124,0.81,0.82,0.35
-11,Broken Clocks,Velvet Minor,r&b,sad,0.45,88,0.22,0.55,0.48
-12,Red Dust Road,Prairie Echo,country,nostalgic,0.54,96,0.68,0.61,0.74
-13,Bass Drop Galaxy,Frekwency,edm,energetic,0.95,140,0.72,0.94,0.04
-14,Rainy Seoul,Park Hyeon,k-pop,romantic,0.63,108,0.78,0.74,0.29
-15,Concrete Jungle,MC Drift,hip-hop,confident,0.80,98,0.55,0.83,0.11
-16,Requiem in Blue,Aria Voss,classical,melancholic,0.21,52,0.18,0.22,0.97
-17,Backyard Fire,The Hollow Bones,folk,nostalgic,0.33,74,0.73,0.44,0.91
-18,Voltage Surge,Chainbreak,metal,angry,0.97,168,0.31,0.58,0.06
+1,Tujhe Kitna Chahne Lage,Arijit Singh,pop,melancholic,0.4,71,0.3,0.4,0.73
+2,Tere Bina,A.R. Rahman,pop,happy,0.7,144,0.87,0.74,0.28
+3,Perfect,Ed Sheeran,pop,sad,0.45,95,0.17,0.6,0.16
+4,Adheeraa,A.R. Rahman,pop,energetic,0.83,111,0.56,0.72,0.11
+5,Baarish Lete Aana,Darshan Raval,pop,melancholic,0.35,67,0.32,0.54,0.84
+6,Whatever It Takes,Imagine Dragons,rock,moody,0.66,135,0.56,0.67,0.04
+7,Courtesy Call,Thousand Foot Krutch,rock,moody,0.64,164,0.45,0.53,0.0
+8,The Final Countdown,Europe,rock,intense,0.84,118,0.19,0.53,0.06
+9,Stressed Out,Twenty One Pilots,rock,happy,0.64,170,0.65,0.73,0.05
+10,Thunderstruck,AC/DC,rock,intense,0.89,134,0.26,0.5,0.0
+11,Evening Silence,Three Four Trio,jazz,melancholic,0.14,89,0.11,0.43,0.96
+12,My Funny Valentine,Chet Baker,jazz,melancholic,0.01,133,0.28,0.44,0.94
+13,Öyle Bir Rüya,Hüsnü Arkan,jazz,sad,0.47,97,0.37,0.37,0.14
+14,Comics,Caravan Palace,jazz,energetic,0.85,90,0.56,0.55,0.0
+15,Deirdres samba,Cornelis Vreeswijk,jazz,chill,0.3,100,0.85,0.62,0.93
+16,"Mozart: Piano Concerto No. 20 in D Minor, K. 466: III. Allegro assai",Wolfgang Amadeus Mozart,classical,melancholic,0.16,72,0.23,0.36,0.98
+17,Kaakum Kadavul,Sirkazhi Govindarajan,classical,happy,0.71,100,0.8,0.52,0.61
+18,Indrayani Kathi,Bhimsen Joshi,classical,relaxed,0.42,77,0.72,0.48,0.99
+19,Aan Milo Sajna,Ajoy Chakrabarty,classical,energetic,0.84,68,0.5,0.37,0.8
+20,Maruthamalai Maamaniye,Madurai Somasundaram,classical,relaxed,0.49,96,0.61,0.35,0.99
+21,Jaadugar,Paradox,hip-hop,sad,0.57,95,0.19,0.67,0.77
+22,Usuraiya Tholaichaen,Stephen Zechariah,hip-hop,sad,0.58,100,0.37,0.57,0.52
+23,Notorious,Wazir Patar,hip-hop,moody,0.61,84,0.53,0.83,0.07
+24,Po Ve Po - The Pain of Love,Anirudh Ravichander,hip-hop,sad,0.62,90,0.35,0.57,0.49
+25,Ykwim,Karan Aujla,hip-hop,relaxed,0.57,105,0.66,0.84,0.04
+26,Me Canse de Amarte,Edwin Luna y La Trakalosa de Monterrey,r-n-b,moody,0.56,130,0.51,0.65,0.19
+27,Deep End Freestyle,Sleepy Hallow,r-n-b,relaxed,0.48,134,0.78,0.88,0.7
+28,Toda Forma De Poder,Engenheiros Do Hawaii,r-n-b,energetic,0.95,203,0.59,0.33,0.17
+29,Build Me Up Buttercup,The Foundations,r-n-b,happy,0.66,134,0.88,0.64,0.2
+30,El Terrón,"Sergio Vega ""El Shaka""",r-n-b,happy,0.76,96,0.97,0.83,0.51
+31,Bhayanak Atma,Nucleya,edm,happy,0.95,194,0.61,0.55,0.0
+32,He's a Pirate - Hans Zimmer vs Dimitri Vegas & Like Mike / Bonus Track,Dimitri Vegas & Like Mike,edm,intense,0.92,112,0.34,0.63,0.0
+33,One Thing Right,Marshmello,edm,moody,0.62,88,0.44,0.66,0.06
+34,Words (feat. Zara Larsson),Alesso,edm,moody,0.59,124,0.44,0.74,0.02
+35,Don’t Go (with Justin Bieber & Don Toliver),Skrillex,edm,sad,0.69,75,0.36,0.69,0.02
+36,Blow My Smoke,Upchurch,country,happy,0.85,150,0.64,0.45,0.02
+37,På vei,Rotlaus,country,intense,0.79,88,0.35,0.47,0.02
+38,I Hate Love Songs,Kelsea Ballerini,country,moody,0.45,180,0.4,0.39,0.25
+39,Hurt,Johnny Cash,country,melancholic,0.39,90,0.16,0.53,0.65
+40,Hjortejakt,Vassendgutane,country,happy,0.83,108,0.77,0.62,0.07
+41,Ya Rabba,Kailash Kher,folk,moody,0.41,144,0.59,0.65,0.26
+42,Necesito De Ti,Grupo Azteka,folk,happy,0.7,153,0.86,0.45,0.23
+43,Ontario,Novo Amor,folk,melancholic,0.22,90,0.17,0.41,0.95
+44,As It Was,Vancouver Sleep Clinic,folk,melancholic,0.31,144,0.14,0.54,0.91
+45,The Sound of Silence - Acoustic Version,Simon & Garfunkel,folk,melancholic,0.22,107,0.33,0.53,0.84
+46,Chico Granada,Carajo,metal,intense,0.96,160,0.39,0.46,0.0
+47,Crawling In The Dark,Hoobastank,metal,happy,0.93,94,0.65,0.59,0.0
+48,The Rumbling (TV Size),SiM,metal,happy,0.88,145,0.65,0.41,0.0
+49,More Than Words,Extreme,metal,melancholic,0.13,183,0.26,0.4,0.47
+50,Can't Stop Lovin' You,Van Halen,metal,energetic,0.9,118,0.54,0.59,0.14
+51,Makeba,Jain,indie,moody,0.66,116,0.42,0.82,0.39
+52,Naganya Maya,Sajjan Raj Vaidya,indie,melancholic,0.26,171,0.2,0.28,0.86
+53,Chinta,Tribal Rain,indie,chill,0.3,98,0.72,0.73,0.93
+54,Falling In Love,Cigarettes After Sex,indie,melancholic,0.27,141,0.37,0.47,0.73
+55,Normal No More,TYSM,indie,sad,0.53,95,0.18,0.77,0.55
+56,The Letter (Guilty),Sir Charles Jones,blues,relaxed,0.41,100,0.61,0.86,0.54
+57,I Say a Little Prayer,Aretha Franklin,blues,focused,0.35,133,0.5,0.59,0.48
+58,In the Summertime,Mungo Jerry,blues,relaxed,0.45,83,0.97,0.75,0.72
+59,Bad,Royal Deluxe,blues,moody,0.62,83,0.56,0.56,0.07
+60,Move Something,Lacee,blues,happy,0.63,190,0.8,0.65,0.01
+61,Skin,Rag'n'Bone Man,soul,intense,0.74,171,0.35,0.56,0.27
+62,Never Easy,Manila Killa,soul,intense,0.94,123,0.06,0.48,0.0
+63,Man in the Mirror - 2012 Remaster,Michael Jackson,soul,intense,0.81,100,0.27,0.81,0.52
+64,You Know I'm No Good,Amy Winehouse,soul,relaxed,0.5,103,0.8,0.69,0.01
+65,Rolling in the Deep,Adele,soul,energetic,0.77,105,0.51,0.73,0.14
+66,Sai Pra Lá 2,Mc Kadu,funk,relaxed,0.44,113,0.66,0.95,0.51
+67,Hit 'Em Up - Single Version,2Pac,funk,energetic,0.84,95,0.59,0.92,0.04
+68,Se Eu Te Botar Faz Barulho?,Mc Gw,funk,happy,0.8,132,0.73,0.79,0.04
+69,Favela Sorrir,Mc Kelvinho,funk,moody,0.52,180,0.45,0.55,0.64
+70,By the Way,Red Hot Chili Peppers,funk,intense,0.97,122,0.2,0.45,0.03
+71,Me Muero,Nigga,reggae,happy,0.76,80,0.93,0.68,0.05
+72,Caile,Luar La L,reggae,energetic,0.76,122,0.46,0.7,0.3
+73,Red Red Wine,UB40,reggae,relaxed,0.47,89,0.84,0.86,0.0
+74,DÁKITI,Bad Bunny,reggae,sad,0.57,110,0.14,0.73,0.4
+75,It Wasn't Me,Shaggy,reggae,happy,0.61,95,0.65,0.85,0.06
+76,Surfista Calhorda,Os Replicantes,punk,happy,0.78,205,0.75,0.27,0.0
+77,Cartonero,Attaque 77,punk,happy,0.83,170,0.81,0.5,0.01
+78,When I Come Around,Green Day,punk,happy,0.91,98,0.81,0.53,0.02
+79,Holiday,Green Day,punk,happy,0.88,147,0.74,0.54,0.0
+80,ハッピーライフ,175R,punk,intense,0.98,133,0.36,0.5,0.0
+81,Nocturnal,Joep Beving,ambient,melancholic,0.02,57,0.1,0.22,0.99
+82,Pure,Cigarettes After Sex,ambient,melancholic,0.21,134,0.04,0.54,0.56
+83,Ala,Joep Beving,ambient,melancholic,0.12,80,0.37,0.38,0.99
+84,Borderland Sorrows,Slow Meadow,ambient,melancholic,0.11,82,0.08,0.32,0.94
+85,Sweet,Cigarettes After Sex,ambient,sad,0.51,97,0.12,0.45,0.35
+86,Family,The Chainsmokers,house,sad,0.61,118,0.37,0.58,0.43
+87,Blah Blah Blah,Armin van Buuren,house,intense,0.96,138,0.18,0.61,0.01
+88,Get Low,Dillon Francis,house,happy,0.93,101,0.73,0.67,0.03
+89,Personal,HRVY,house,relaxed,0.54,139,0.88,0.76,0.11
+90,Fake A Smile,Alan Walker,house,sad,0.55,150,0.25,0.45,0.21
+91,Rhythm Is a Dancer (12'' Version),SNAP!,techno,happy,0.87,124,0.85,0.77,0.11
+92,Too Little Too Late - Little Late Edit,Joris Voorn,techno,intense,0.74,128,0.17,0.68,0.01
+93,Exoplanet,Third Person,techno,intense,0.89,124,0.04,0.76,0.14
+94,Dragon of Eden - Original Mix,Kevin de Vries,techno,sad,0.68,125,0.03,0.7,0.0
+95,"Red Light Green Light - For Club Play Only, Pt. 6",Duke Dumont,techno,happy,0.82,124,0.95,0.81,0.0
+96,Brighter Than Sunshine,Aqualung,acoustic,sad,0.49,73,0.4,0.42,0.29
+97,Between the Stars,Canyon City,acoustic,melancholic,0.29,95,0.08,0.48,0.87
+98,See You Again,Boyce Avenue,acoustic,sad,0.41,152,0.28,0.57,0.54
+99,Can You Feel the Love Tonight,Boyce Avenue,acoustic,melancholic,0.2,119,0.22,0.45,0.93
+100,July Bones,Richard Walters,acoustic,melancholic,0.27,100,0.15,0.6,0.79

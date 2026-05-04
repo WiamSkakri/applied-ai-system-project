@@ -1,3 +1,6 @@
 pandas
 pytest
 streamlit
+datasets
+sentence-transformers
+numpy

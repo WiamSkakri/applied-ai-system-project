@@ -2,57 +2,119 @@
 
 ## 1. Model Name
 
-**MoodMatch 1.0**
+**MoodMatch 2.0** (also referred to as VibeFinder in the Streamlit UI). Version 1.0 was the structured-profile content-based scorer from Modules 1–3; version 2.0 layers a free-text RAG retriever on top of the same catalog.
 
 ---
 
 ## 2. Intended Use
 
-MoodMatch is designed to suggest songs from a small catalog that fit a listener's current mood, preferred genre, and energy level. It assumes the user can describe what they want in simple terms — like "I want chill lofi music with low energy" — and returns a ranked list of the five best matches. This is a classroom simulation, not a production system. It is not designed for real streaming platforms, real user data, or catalogs larger than a few dozen songs.
+MoodMatch suggests songs from a 100-track catalog based on what a listener describes they want. The system supports two interaction modes:
+
+- **Free-text mode (RAG, primary):** the user types a natural-language description like *"songs for a rainy sunday morning"* or *"angry workout music"*, and the system returns the 5 closest matches by semantic similarity. Available via the Streamlit UI (`streamlit run src/app.py`).
+- **Structured-profile mode (baseline):** the user supplies a typed taste profile (`genre`, `mood`, `target_energy`, `likes_acoustic`) and the system applies hand-coded scoring rules. Available via the CLI (`python -m src.main`).
+
+This is a classroom simulation, not a production system. It is not designed for real streaming platforms, real user data, or catalogs at production scale.
 
 ---
 
 ## 3. How the Model Works
 
-The recommender scores every song in the catalog against what the user told it they want, then returns the top five scores. Each song gets points in five categories:
+### Original layer — structured-profile scoring
 
-- **Mood match** — if the song's mood matches the user's requested mood, it gets the biggest bonus (3 points). This is treated as the most important signal.
-- **Genre match** — if the song's genre matches, it gets a smaller bonus (1 point in the current weight-shift version, originally 2).
-- **Energy fit** — the closer the song's energy level is to the user's target, the more points it earns (up to 4 points). A song exactly on target gets the full amount; one far away gets close to zero.
-- **Acousticness fit** — acoustic songs are rewarded for users who like acoustic music; electric songs are rewarded for those who don't (up to 1.5 points).
-- **Valence fit** — valence measures how "positive" a song sounds. Happy or romantic moods get rewarded for high-valence songs; sad or melancholic moods get rewarded for low-valence ones (up to 1 point).
+The recommender scores every song in the catalog against what the user told it they want, then returns the top five. Each song earns points in five categories:
 
-The weights were modified from the original as part of an experiment: energy was doubled and genre was halved to test how sensitive the rankings are to weight changes.
+- **Mood match** — exact-match bonus (3 points). The largest single signal.
+- **Genre match** — exact-match bonus (1 point in the current weight-shift version, originally 2).
+- **Energy fit** — proximity to the user's target energy (up to 4 points). On-target = full points; far-off ≈ zero.
+- **Acousticness fit** — acoustic songs are rewarded for users who like acoustic; electric songs for those who don't (up to 1.5 points).
+- **Valence fit** — positive moods (happy, energetic) reward high-valence songs; other moods reward low-valence ones (up to 1 point).
+
+The weights were modified from the original as part of an experiment: energy was doubled (2.0 → 4.0) and genre was halved (2.0 → 1.0) to test how sensitive the rankings are to weight changes.
+
+### RAG layer — free-text semantic retrieval
+
+A free-text query is processed end-to-end:
+
+1. **Blurb generation.** Each song is converted at index time into a one-sentence English description that includes mood, genre, and human-readable bands of every audio feature (e.g. *"a melancholic jazz song. It is calm (energy 0.14), downbeat and somber (valence 0.11), mid-tempo at 89 BPM, mostly acoustic, moderately danceable."*).
+2. **Embedding.** Both the song blurbs and the user's query are encoded with `sentence-transformers/all-MiniLM-L6-v2` into 384-dimensional vectors.
+3. **Retrieval.** Cosine similarity between the query vector and each song vector. The top K songs are returned.
+4. **Confidence guardrail.** If the highest similarity score is below 0.25, the system returns a friendly rejection instead of results — this catches gibberish input and queries the catalog cannot serve.
+
+The two layers operate independently on the same catalog. Either entry point yields rankings without touching the other.
 
 ---
 
 ## 4. Data
 
-The catalog contains 18 songs stored in a CSV file. Each song has 10 attributes: a unique ID, title, artist name, genre, mood, energy (0–1), tempo in BPM, valence (0–1), danceability (0–1), and acousticness (0–1). The 18 songs span 15 different genres including pop, lofi, rock, r&b, jazz, classical, metal, folk, edm, hip-hop, country, k-pop, indie pop, synthwave, and ambient. Most genres have only one song. Moods covered include happy, chill, intense, sad, relaxed, focused, nostalgic, romantic, moody, energetic, melancholic, angry, and confident. Notably, two features in the dataset — tempo and danceability — are never used by the scoring algorithm, which is a gap between the data available and the data actually used.
+The catalog contains 100 real songs sampled from the public Hugging Face mirror of the Spotify Tracks Dataset (`maharshipandya/spotify-tracks-dataset`). Sampling is reproducible — driven by [`scripts/build_catalog.py`](scripts/build_catalog.py) with `seed=42` and a `popularity ≥ 20` filter to exclude the most obscure tracks.
+
+**Genre coverage:** 20 genres, 5 songs each: pop, rock, jazz, classical, hip-hop, r-n-b, edm, country, folk, metal, indie, blues, soul, funk, reggae, punk, ambient, house, techno, acoustic.
+
+**Audio features used:** Each song has 10 fields — id, title, artist, genre, mood, energy (0–1), tempo_bpm, valence (0–1), danceability (0–1), acousticness (0–1).
+
+**Mood derivation.** Spotify's audio features include `energy`, `valence`, `danceability`, `acousticness`, and `tempo`, but **not** a `mood` label. The build script derives mood from valence and energy:
+
+| Rule | Mood |
+|---|---|
+| valence ≥ 0.6 and energy ≥ 0.6 | `happy` |
+| valence ≥ 0.6 and energy < 0.4 | `chill` |
+| valence ≥ 0.6 (mid-energy) | `relaxed` |
+| valence < 0.4 and energy ≥ 0.7 | `intense` |
+| valence < 0.4 and energy < 0.4 | `melancholic` |
+| valence < 0.4 (mid-energy) | `sad` |
+| mid-valence and energy ≥ 0.7 | `energetic` |
+| mid-valence and energy < 0.4 | `focused` |
+| else | `moody` |
+
+The resulting mood distribution is uneven: `happy` (22), `melancholic` (19), `sad` (14), `intense` (13), `moody` (11), `relaxed` (10), `energetic` (8), `chill` (2), `focused` (1). This is an honest reflection of how real Spotify tracks distribute across the valence/energy plane.
 
 ---
 
 ## 5. Strengths
 
-The system works best when a user's preferences are internally consistent — for example, someone who wants chill lofi music at low energy. In those cases, all five scoring signals point in the same direction and the top result is clearly the right pick. The scoring is also fully transparent: every recommendation comes with a plain-language explanation of exactly which signals contributed and by how much. This makes it easy to audit why a song was recommended. The system also handles edge cases gracefully — when a genre isn't in the catalog at all, it doesn't crash; it just scores on the remaining signals and returns something reasonable.
+The system handles two very different interaction styles cleanly. The **structured-profile mode** is fully transparent: every recommendation comes with a plain-language explanation listing exactly which signals contributed and by how much, which makes it easy to audit *why* a song was picked. The **RAG mode** handles vague, emotional, or context-rich queries that the structured mode cannot — *"songs for a rainy sunday morning"* has no field on the user profile, but semantic retrieval handles it without any additional scaffolding.
+
+The RAG layer also gracefully handles **out-of-vocabulary cases.** A query for a mood that doesn't exist in the rule-derived label set (e.g. "nostalgic") would return zero results in mood-exact-match scoring, but in semantic retrieval it returns plausible matches (folk, acoustic, melancholic) because the embedder understands "nostalgic" without needing a label.
+
+The **confidence guardrail** prevents the silent-failure mode that pure cosine retrieval has by default: instead of returning random near-neighbors for gibberish input, the system tells the user no good match was found.
 
 ---
 
 ## 6. Limitations and Bias
 
-The system has a strong mood-matching bias: mood carries 3.0 out of a maximum 10.5 points (roughly 29%), which means it consistently overrides other preferences. For example, a user who wants high-energy sad music will always receive a slow, low-energy sad song at the top of their list — the energy mismatch is simply too small a penalty to overcome the mood bonus. The catalog is also highly genre-sparse, with 18 songs spread across 15 different genres, so most users receive genre bonus points at most once or twice in their top 5, effectively turning the system into a mood-and-energy ranker for anyone outside of lofi or pop. Two audio features present in the dataset — tempo (BPM) and danceability — are loaded but completely ignored during scoring, meaning a user who specifically wants fast-tempo dance music cannot be distinguished from one who wants slow acoustic music if their mood and energy targets are similar. Finally, the valence scoring logic incorrectly treats moods like "intense" and "focused" as negative-valence moods, so the system rewards those users with sad-sounding songs even though intensity and focus are emotionally neutral-to-positive experiences.
+**Mood-matching dominance (structured mode).** Mood carries 3.0 points out of a maximum 10.5 (~29%), which consistently overrides other preferences. A user who wants high-energy *sad* music will always receive a slow, low-energy sad song at the top — the energy mismatch can't overcome the mood bonus. The 6-profile stress test in `python -m src.main` makes this visible.
+
+**Mood derivation is reductive (RAG mode).** The valence/energy rule produces only 9 mood labels, and the distribution skews heavily toward `happy`, `melancholic`, and `sad`. Underrepresented labels like `chill` (2 songs) and `focused` (1 song) make those user profiles practically unsearchable through the mood-exact-match rule. Lyrical/cultural moods like `nostalgic`, `romantic`, or `confident` cannot be derived from audio features at all.
+
+**Popularity filter biases toward English/Western charts.** The build script's `popularity ≥ 20` cutoff over-represents the languages and artists Spotify's algorithm has already amplified, under-serving regional music.
+
+**The embedder is general-purpose, not music-specific.** `all-MiniLM-L6-v2` was trained on web text, not music descriptions. It treats the word *"music"* as a strong matching signal regardless of catalog contents — a query for *"polka music for accordion fans"* scores 0.404 (above the 0.25 threshold) even though the catalog has zero polka. The threshold catches gibberish, not the *"valid English query for music we don't have"* failure mode.
+
+**Two audio features remain unused in the structured scorer.** Tempo (BPM) and danceability are loaded but never scored, meaning a runner wanting 150 BPM and someone studying wanting 70 BPM are currently indistinguishable in structured mode if their other fields match. (Both fields *are* used in the RAG blurbs, so RAG mode does discriminate on tempo to some extent.)
 
 ---
 
 ## 7. Evaluation
 
-Six user profiles were tested across two runs: a baseline run using the original weights (genre: 2.0, energy: 2.0), and a weight-shift experiment that doubled energy importance to 4.0 and halved genre importance to 1.0. The six profiles were: High-Energy Pop (pop/happy), Chill Lofi (lofi/chill), Deep Intense Rock (rock/intense), Conflicting Sad+High Energy (r&b/sad with high energy target), Ghost Genre (bossa nova — not in the catalog), and Extreme Acoustic Seeker (classical/melancholic). For each profile, the top 5 ranked songs were reviewed to see whether the results matched the stated preference intuitively, and whether the same songs appeared across profiles in ways that suggested a filter bubble. The most surprising result was that the #1 recommendation did not change for any profile between the baseline and the weight-shift experiment — despite significantly changing the weights, the mood bonus was still large enough to lock in the top result. This revealed that mood is the true controlling factor in the ranking, not energy or genre. The Ghost Genre profile was also revealing: with no catalog songs in "bossa nova," the system silently fell back to mood and energy scoring only, returning jazz and lofi songs — which happened to feel reasonable by accident, not by design.
+The system was evaluated two ways.
+
+**Manual evaluation (structured mode, 6 profiles):** Six user profiles were tested across two scoring runs — a baseline (genre: 2.0, energy: 2.0) and a weight-shift experiment (energy: 4.0, genre: 1.0). The most surprising result was that the #1 recommendation did not change for any profile between the two runs. Despite significantly changing the weights, the mood bonus was still large enough to lock in the top result, revealing that mood was the true controlling factor in the ranking.
+
+**Automated evaluation (RAG mode, 10 property-based assertions):** [`scripts/evaluate.py`](scripts/evaluate.py) defines 10 free-text queries with property-based expectations (genre or mood band, average energy/acousticness, similarity threshold for gibberish). The current pass rate is **9/10 (90%)**.
+
+The single failure (`"upbeat happy summer vibes"`) is itself instructive: the top retrieved song is *In the Summertime* by Mungo Jerry — semantically a perfect summer-themed result — but its mood was rule-derived to `relaxed` rather than `happy`. The retrieval did the right thing; the mood-derivation rule mislabeled the song. This failure is direct evidence of the *"mood derivation is reductive"* limitation in section 6.
+
+The other 9 cases pass with healthy margin: top-3 average acousticness 0.93 for an "acoustic studying" query, top-3 average energy 0.90 for a "dance party" query, gibberish similarity 0.163 (well below the 0.25 threshold), and so on. Run the harness with `python -m scripts.evaluate`.
 
 ---
 
 ## 8. Future Work
 
-Three changes would most improve this system. First, include tempo and danceability in the scoring — a runner looking for 150 BPM workout music and someone wanting slow 70 BPM study music currently get the same results if their mood and energy match, which makes no sense. Second, expand the catalog significantly — with only one song per genre in most cases, the genre signal is nearly useless for most users; a catalog of at least 100 songs would give the genre and mood signals real room to differentiate. Third, reduce the mood weight or introduce soft matching — instead of a binary "mood matches or it doesn't," a similarity map (e.g., "chill" is close to "relaxed" but far from "angry") would let the system handle users whose exact mood isn't represented in the catalog without silently ignoring the preference.
+Three changes would most improve this system.
+
+1. **Use a music-domain embedder, not a general-text one.** Models trained on music descriptions or audio (CLAP, MULE, or even a fine-tuned MiniLM) would understand *"polka"*, *"shoegaze"*, *"slowcore"*, etc. — words the current embedder treats as generic noise.
+2. **Add an LLM-generated playlist intro.** With an optional Anthropic API key, the app could generate a short personalized paragraph framing the playlist that references the user's exact words. The infrastructure (sidebar key input, graceful fallback) was scoped during design but not implemented.
+3. **Expand the catalog and use richer mood labeling.** A larger catalog (1,000+ songs) plus an LLM-generated mood label per song (instead of the rule-based valence/energy map) would fix both the underrepresented-mood problem and the lyrical-mood problem at once.
 
 ---
 
